@@ -1,0 +1,23 @@
+/* A modern, clean font for the whole site */
+body {
+    background-color: #f0f8ff; /* Our light blue background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the header that contains our navigation */
+header {
+    background-color: #ffffff; /* A clean white background for the nav bar */
+    padding: 20px 0; /* Adds some space above and below the links */
+    text-align: center; /* Centers the links */
+    border-bottom: 1px solid #e0e0e0; /* Adds a subtle line below the header */
+}
+
+/* Style the navigation links themselves */
+nav a {
+    color: #333; /* A dark grey for the text */
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold; /* Makes the font a bit thicker */
+    margin: 0 15px; /* Adds space to the left and right of each link */
+}

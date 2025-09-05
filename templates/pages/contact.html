@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="bg-white py-20">
+    <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Let's Get Your Team Covered</h1>
+            <p class="mt-4 text-lg text-gray-600">Fill out the details below, and we'll get back to you with a customized, no-obligation quote.</p>
+        </div>
+
+        <div class="mt-12 max-w-2xl mx-auto">
+            <form method="POST" class="space-y-6">
+                {% csrf_token %}
+
+                <!-- This simpler loop will now work perfectly -->
+                {% for field in form %}
+                <div>
+                    {{ field.label_tag }}
+                    <div class="mt-1">
+                        {{ field }}
+                    </div>
+                    {% if field.errors %}
+                        <p class="mt-1 text-sm text-red-600">{{ field.errors|first }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-colors">
+                        Get My Free Quote
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
